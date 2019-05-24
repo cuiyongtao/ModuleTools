@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">basemodule</string>
+
+    <string name="delete_file_error">删除文件出错</string>
 </resources>

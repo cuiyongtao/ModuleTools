@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        test=findViewById(R.id.test);
+        test = findViewById(R.id.test);
 
 
     }
@@ -31,7 +31,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 getToastUtil().showToastShort("fadsfsdf");
+                logUtil.getLogE(constantUtils.dp2px(199) + "");
+                test.setText(constantUtils.getAppVersion());
+                spUtils.putSPString("kdy", "saffsdaf");
+                String tests = spUtils.getSPString("kdy");
+                test.setText(tests);
+
             }
         });
+
     }
 }
