@@ -9,9 +9,10 @@ import android.text.TextUtils
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.victory.basemodule.R
-import com.victory.basemodule.constant.BaseConstant
 import java.io.File
 import java.math.BigDecimal
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 /**
  * @author  Victory
@@ -111,6 +112,73 @@ class ConstantUtils {
         } catch (e: Exception) {
             return e.toString()
         }
+    }
+
+    /**
+     * 使用md5加密，例如password
+     *
+     * @param string
+     * @return
+     */
+    fun takeMd5(string: String): String {
+        var md5: MessageDigest? = null
+        try {
+            md5 = MessageDigest.getInstance("MD5")
+            val bytes = md5!!.digest(string.toByteArray())
+            var result = ""
+            for (b in bytes) {
+                var temp = Integer.toHexString(b.toInt() and 0xff)
+                if (temp.length == 1) {
+                    temp = "0$temp"
+                }
+                result += temp
+            }
+            return result
+        } catch (e: NoSuchAlgorithmException) {
+            e.printStackTrace()
+            Toast.makeText(mContext, mContext.resources.getString(R.string.string_to_md5_error), Toast.LENGTH_SHORT).show()
+        }
+        return ""
+    }
+
+    /**
+     * 查看文件夹大小
+     */
+
+    fun getFileSize(file: File): Long {
+        var size: Long = 0
+        try {
+            val fileList = file.listFiles()
+            for (i in fileList.indices) {
+                if (fileList[i].isDirectory) {
+                    size = size + getFileSize(fileList[i])
+                } else {
+                    size = size + fileList[i].length()
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+          Toast.makeText(mContext, mContext.resources.getString(R.string.get_file_size_error),Toast.LENGTH_SHORT).show()
+        }
+
+        return size
+    }
+
+    /**
+     * 生成文件夹
+     */
+    fun makeRootDirectory(filePath: String) {
+        var file: File? = null
+        try {
+            file = File(filePath)
+            //如果不存在则生成文件
+            if (!file.exists()) {
+                file.mkdirs()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(mContext, mContext.resources.getString(R.string.make_file_error),Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     /**

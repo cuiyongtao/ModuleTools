@@ -20,8 +20,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         test = findViewById(R.id.test);
-
-
     }
 
     @Override
@@ -36,7 +34,6 @@ public class MainActivity extends BaseActivity {
                 spUtils.putSPString("kdy", "saffsdaf");
                 String tests = spUtils.getSPString("kdy");
                 test.setText(tests);
-
             }
         });
 

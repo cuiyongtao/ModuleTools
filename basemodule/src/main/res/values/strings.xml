@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">basemodule</string>
-
+    <!--txt-->
+    <string name="txt_test">测试</string>
+    <!--button-->
+    <string name="btn_">测试</string>
+    <!--error-->
     <string name="delete_file_error">删除文件出错</string>
+    <string name="string_to_md5_error">加密出错</string>
+    <string name="get_file_size_error">获取文件大小出错</string>
+    <string name="make_file_error">创建文件夹出错</string>
 </resources>
