@@ -12,14 +12,18 @@
             android:id="@+id/txtLeft"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text=""/>
+            android:text="@string/txt_test"
+            android:gravity="center"
+            android:textSize="@dimen/sp_14"/>
+
+
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="2">
 
     </RelativeLayout>
 

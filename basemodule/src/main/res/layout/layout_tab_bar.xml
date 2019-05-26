@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rvRadioButton"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/dp_65"
+    android:orientation="horizontal">
 
-</RelativeLayout>
+    <RadioButton
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="first"
+        android:textSize="@dimen/sp_12"
+        android:drawableTop="@mipmap/ic_launcher_round"
+        android:button="@null"/>
+
+    <RadioButton
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="first" />
+
+    <RadioButton
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="first" />
+
+
+    <RadioButton
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="first" />
+
+
+    <RadioButton
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="first" />
+
+
+</RadioGroup>
