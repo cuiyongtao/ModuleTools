@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="55dp">
-    <!---->
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-        <TextView
-            android:id="@+id/txtLeft"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/txt_test"
-            android:gravity="center"
-            android:textSize="@dimen/sp_14"/>
-
-
-
-    </RelativeLayout>
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
 
     <RelativeLayout
+        android:id="@+id/rlLeft"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2">
 
+        <ImageButton
+            android:id="@+id/leftIB"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:padding="@dimen/dp_10" />
+
+        <TextView
+            android:id="@+id/txtLeft"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我是名称"
+            android:textSize="@dimen/sp_16" />
+
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rlCenter"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="6">
+
+        <TextView
+            android:id="@+id/txtTitleName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我是名称"
+            android:textSize="@dimen/sp_16" />
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rlRight"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
 
+        <ImageButton
+            android:id="@+id/rightIB"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:padding="@dimen/dp_10"
+            android:visibility="gone" />
+    </RelativeLayout>
 </LinearLayout>

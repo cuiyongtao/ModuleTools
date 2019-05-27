@@ -1,10 +1,9 @@
 package com.example.moduletools;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 import com.victory.basemodule.activity.BaseActivity;
+import com.victory.basemodule.tools.TitleBar;
 
 /**
  * Time 2019/5/23
@@ -13,29 +12,11 @@ import com.victory.basemodule.activity.BaseActivity;
  * @author Victory
  */
 public class MainActivity extends BaseActivity {
-    private TextView test;
+    private TitleBar test;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        test = findViewById(R.id.test);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getToastUtil().showToastShort("fadsfsdf");
-                logUtil.getLogE(constantUtils.dp2px(199) + "");
-                test.setText(constantUtils.getAppVersion());
-                spUtils.putSPString("kdy", "saffsdaf");
-                String tests = spUtils.getSPString("kdy");
-                test.setText(tests);
-            }
-        });
-
     }
 }

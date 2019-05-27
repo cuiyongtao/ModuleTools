@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rvRadioButton"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_65"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background=""/>
 
     <RadioButton
         android:layout_width="@dimen/dp_0"
@@ -12,34 +18,55 @@
         android:layout_weight="1"
         android:text="first"
         android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/ic_launcher_round"
-        android:button="@null"/>
+        android:drawableTop="@mipmap/index"
+        android:button="@null"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_0"/>
 
     <RadioButton
         android:layout_width="@dimen/dp_0"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="first" />
+        android:text="first"
+        android:textSize="@dimen/sp_12"
+        android:drawableTop="@mipmap/index"
+        android:button="@null"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_0"/>
 
     <RadioButton
         android:layout_width="@dimen/dp_0"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="first" />
+        android:text="first"
+        android:textSize="@dimen/sp_12"
+        android:drawableTop="@mipmap/index"
+        android:button="@null"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_0"/>
 
 
     <RadioButton
         android:layout_width="@dimen/dp_0"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="first" />
-
+        android:text="first"
+        android:textSize="@dimen/sp_12"
+        android:drawableTop="@mipmap/index"
+        android:button="@null"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_0"/>
 
     <RadioButton
         android:layout_width="@dimen/dp_0"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="first" />
+        android:text="first"
+        android:textSize="@dimen/sp_12"
+        android:drawableTop="@mipmap/index"
+        android:button="@null"
+        android:gravity="center"
+        android:drawablePadding="@dimen/dp_0"/>
 
 
-</RadioGroup>
+</LinearLayout>
