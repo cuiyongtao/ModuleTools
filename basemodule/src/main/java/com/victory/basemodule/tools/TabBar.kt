@@ -5,6 +5,9 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.victory.basemodule.R
 
 /**
@@ -13,6 +16,7 @@ import com.victory.basemodule.R
  * BottomBar : 底部导航栏
  */
 open class TabBar : LinearLayout {
+    var mFragmentList: List<Fragment>? = null
 
     constructor(context: Context) : super(context, null) {
         getView()
@@ -31,6 +35,8 @@ open class TabBar : LinearLayout {
         return view
     }
 
-
+    fun setFragmentList(fragmetList: List<Fragment>) {
+        mFragmentList = fragmetList
+    }
 
 }
