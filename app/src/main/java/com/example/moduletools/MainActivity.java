@@ -20,14 +20,5 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         test=findViewById(R.id.title);
-        test.setTxtLeftInterFace(new TitleBar.TxtLeftInterface() {
-            @Override
-            public void txtLeftOnclick() {
-                toastUtil.showToastShort("fdas");
-            }
-        });
-
-        test.setTitleBarBg(R.color.txt_font_price);
-        test.setTitle("afdsaf");
     }
 }

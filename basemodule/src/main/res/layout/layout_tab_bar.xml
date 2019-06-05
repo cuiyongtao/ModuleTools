@@ -2,70 +2,81 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rvRadioButton"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_alignParentBottom="true">
+    android:layout_height="?attr/actionBarSize"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_0_5" />
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/line" />
 
-    <RadioButton
-        android:layout_width="@dimen/dp_0"
+    <RadioGroup
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="first"
-        android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/index"
-        android:button="@null"
-        android:gravity="center"
-        android:drawablePadding="@dimen/dp_0"/>
+        android:orientation="horizontal">
 
-    <RadioButton
-        android:layout_width="@dimen/dp_0"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="first"
-        android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/index"
-        android:button="@null"
-        android:gravity="center"
-        android:drawablePadding="@dimen/dp_0"/>
+        <RadioButton
+            android:id="@+id/firstFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
 
-    <RadioButton
-        android:layout_width="@dimen/dp_0"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="first"
-        android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/index"
-        android:button="@null"
-        android:gravity="center"
-        android:drawablePadding="@dimen/dp_0"/>
+        <RadioButton
+            android:id="@+id/secondFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+
+        <RadioButton
+            android:id="@+id/thirdFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
 
 
-    <RadioButton
-        android:layout_width="@dimen/dp_0"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="first"
-        android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/index"
-        android:button="@null"
-        android:gravity="center"
-        android:drawablePadding="@dimen/dp_0"/>
+        <RadioButton
+            android:id="@+id/fourthFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
 
-    <RadioButton
-        android:layout_width="@dimen/dp_0"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="first"
-        android:textSize="@dimen/sp_12"
-        android:drawableTop="@mipmap/index"
-        android:button="@null"
-        android:gravity="center"
-        android:drawablePadding="@dimen/dp_0"/>
-
+        <RadioButton
+            android:id="@+id/fifthFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+    </RadioGroup>
 
 </LinearLayout>

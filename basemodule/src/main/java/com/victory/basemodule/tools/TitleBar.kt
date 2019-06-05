@@ -20,7 +20,6 @@ class TitleBar : Toolbar {
      * 点击事件接口
      */
     private var mTxtLeftInterface: TxtLeftInterface? = null
-    private var mIconLeftInterface: IconLeftInterface? = null
     private var mIconRightInterface: IconRightInterface? = null
     private var mEditCenterSearchInterface: EditCenterSearchInterface? = null
 
@@ -29,7 +28,6 @@ class TitleBar : Toolbar {
      */
     lateinit var titleBarLayout: LinearLayout
     lateinit var txtLeft: TextView
-    lateinit var leftIB: ImageButton
     lateinit var txtTitleName: TextView
     lateinit var etSearch: EditText
     lateinit var rightIB: ImageButton
@@ -40,13 +38,6 @@ class TitleBar : Toolbar {
      */
     fun setTxtLeftInterFace(txtLeftInterface: TxtLeftInterface) {
         mTxtLeftInterface = txtLeftInterface;
-    }
-
-    /**
-     * 左侧ImageButton接口回调方法
-     */
-    fun setIconLeftInterFace(iconLeftInterface: IconLeftInterface) {
-        mIconLeftInterface = iconLeftInterface;
     }
 
     /**
@@ -64,17 +55,14 @@ class TitleBar : Toolbar {
     }
 
     constructor(context: Context) : super(context) {
-        getView()
         init()
     }
 
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet, 0) {
-        getView()
         init()
     }
 
     constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int) : super(context, attributeSet, 0) {
-        getView()
         init()
     }
 
@@ -86,9 +74,19 @@ class TitleBar : Toolbar {
          * mStyle 0=普通样式；1搜索样式；2主页样式
          */
         var mStyle = 0
-
+        //左侧图标
+        lateinit var leftIB: ImageButton
+        private var mIconLeftInterface: IconLeftInterface? = null
+        //
         fun getStyle(style: Int) {
             mStyle = style
+        }
+
+        /**
+         * 左侧ImageButton接口回调方法
+         */
+        public  fun setIconLeftInterFace(iconLeftInterface: IconLeftInterface) {
+            mIconLeftInterface = iconLeftInterface;
         }
     }
 
@@ -149,6 +147,7 @@ class TitleBar : Toolbar {
             }
         }
         //左边图标
+        leftIB.isVisible = true
         leftIB.setOnClickListener {
             if (mIconLeftInterface != null) {
                 mIconLeftInterface!!.iconLeftOnclick()
@@ -171,6 +170,7 @@ class TitleBar : Toolbar {
             }
         }
     }
+
 
     /**
      * 设置当前页面名称

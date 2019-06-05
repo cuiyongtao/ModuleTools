@@ -14,12 +14,16 @@
 
         <ImageButton
             android:id="@+id/leftIB"
-            android:layout_width="@dimen/dp_45"
-            android:layout_height="@dimen/dp_45"
-            android:layout_centerInParent="true"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:src="@mipmap/return_black"
             android:background="@null"
-            android:padding="@dimen/dp_10"
-            android:visibility="gone"/>
+             android:visibility="gone"/>
 
         <TextView
             android:id="@+id/txtLeft"

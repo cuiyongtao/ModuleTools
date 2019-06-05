@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.victory.basemodule.R
 import com.victory.basemodule.application.BaseApplication
 import com.victory.basemodule.constant.BaseConstant
 import com.victory.basemodule.tools.*
@@ -29,16 +30,17 @@ open class BaseActivity : AppCompatActivity() {
     lateinit var constantUtils: ConstantUtils
     //缓存工具
     lateinit var spUtils: SPUtils
-
+    //
+    lateinit var titleBar: TitleBar
     //顶部导航栏样式  0=普通样式；1搜索样式；2主页样式
     var myTitleStyle = 0;
     var myTitleStyleSearch = 1;
     var myTitleStyleMain = 2;
 
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = BaseApplication.baseApplication.applicationContext;
-
         initUtils()
     }
 
@@ -48,6 +50,12 @@ open class BaseActivity : AppCompatActivity() {
         TAG = BaseConstant.CommonTAG + getComponentName().getShortClassName();
         logUtil = LogUtil.getLogUtil(TAG)
         constantUtils = ConstantUtils.getConstantUtils(mContext)
-        TitleBar.getStyle(myTitleStyleMain )
+        spUtils = SPUtils()
+        TitleBar.getStyle(myTitleStyleMain)
+        TitleBar.setIconLeftInterFace(object :TitleBar.IconLeftInterface{
+            override fun iconLeftOnclick() {
+                finish()
+            }
+        })
     }
 }

@@ -5,10 +5,13 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.RadioButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.victory.basemodule.R
+import com.victory.basemodule.adapter.FragmentViewPagerAdapter
 
 /**
  * @author  Victory
@@ -16,18 +19,26 @@ import com.victory.basemodule.R
  * BottomBar : 底部导航栏
  */
 open class TabBar : LinearLayout {
-    var mFragmentList: List<Fragment>? = null
+
+    lateinit var fragmentViewPagerAdapter: FragmentViewPagerAdapter
+
+    //
+    lateinit var firstFragment: RadioButton
+    lateinit var secondFragment: RadioButton
+    lateinit var thirdFragment: RadioButton
+    lateinit var fourthFragment: RadioButton
+    lateinit var fifthFragment: RadioButton
 
     constructor(context: Context) : super(context, null) {
-        getView()
+        init()
     }
 
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet, 0) {
-        getView()
+        init()
     }
 
     constructor(context: Context, attributeSet: AttributeSet, defstyleattr: Int) : super(context, attributeSet, defstyleattr) {
-        getView()
+        init()
     }
 
     private fun getView(): View {
@@ -35,8 +46,26 @@ open class TabBar : LinearLayout {
         return view
     }
 
-    fun setFragmentList(fragmetList: List<Fragment>) {
-        mFragmentList = fragmetList
+    private fun init() {
+        firstFragment = getView().findViewById(R.id.firstFragment)
+        secondFragment = getView().findViewById(R.id.secondFragment)
+        thirdFragment = getView().findViewById(R.id.thirdFragment)
+        fourthFragment = getView().findViewById(R.id.fourthFragment)
+        fifthFragment = getView().findViewById(R.id.fifthFragment)
+        mViewOnClick()
     }
 
+
+    private fun mViewOnClick(){
+        firstFragment.setOnClickListener {
+            Toast.makeText(context,"dfa",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun setFragmentList(fragmetList: List<Fragment>) :List<Fragment> {
+        return fragmetList;
+    }
+
+    private fun setAdapter(){
+    }
 }
