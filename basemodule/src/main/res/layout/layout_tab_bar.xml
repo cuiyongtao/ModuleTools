@@ -9,8 +9,7 @@
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_0_5"
-        android:background=""/>
+        android:layout_height="@dimen/dp_0_5" />
 
     <RadioButton
         android:layout_width="@dimen/dp_0"

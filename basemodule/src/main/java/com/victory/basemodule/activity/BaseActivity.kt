@@ -6,10 +6,7 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.victory.basemodule.application.BaseApplication
 import com.victory.basemodule.constant.BaseConstant
-import com.victory.basemodule.tools.ConstantUtils
-import com.victory.basemodule.tools.LogUtil
-import com.victory.basemodule.tools.SPUtils
-import com.victory.basemodule.tools.ToastUtil
+import com.victory.basemodule.tools.*
 
 /**
  * @author  Victory
@@ -33,6 +30,11 @@ open class BaseActivity : AppCompatActivity() {
     //缓存工具
     lateinit var spUtils: SPUtils
 
+    //顶部导航栏样式  0=普通样式；1搜索样式；2主页样式
+    var myTitleStyle = 0;
+    var myTitleStyleSearch = 1;
+    var myTitleStyleMain = 2;
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = BaseApplication.baseApplication.applicationContext;
@@ -46,6 +48,6 @@ open class BaseActivity : AppCompatActivity() {
         TAG = BaseConstant.CommonTAG + getComponentName().getShortClassName();
         logUtil = LogUtil.getLogUtil(TAG)
         constantUtils = ConstantUtils.getConstantUtils(mContext)
-        spUtils = SPUtils.getSPUtils(mContext)
+        TitleBar.getStyle(myTitleStyleMain )
     }
 }

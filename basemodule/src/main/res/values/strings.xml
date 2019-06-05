@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">basemodule</string>
+    <string name="app_name">库</string>
     <!--txt-->
     <string name="txt_test">测试</string>
     <!--button-->
