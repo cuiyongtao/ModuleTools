@@ -1,9 +1,9 @@
 package com.victory.basemodule.network.httphelper;
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.victory.basemodule.constant.BaseConstant;
+import com.victory.basemodule.test.httphelper.NetWorkRequertLogInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -84,11 +84,11 @@ public class NetWorkRequestHelper<T> {
     public Retrofit getRetrofit() {
         mRetrofit = new Retrofit.Builder()
                 //判断是否是调试模式
-                .baseUrl(BaseConstant.Companion.isDebug() ? BaseConstant.Companion.getBaseURL() : BaseConstant.Companion.getDebugURL())
+                .baseUrl(BaseConstant.Companion.isDebug() ? BaseConstant.Companion.getBaseURL():BaseConstant.Companion.getDebugURL())
                 //Goso序列化数据
-//                .addConverterFactory(GsonConverterFactory.create(getGson()))
+                .addConverterFactory(GsonConverterFactory.create(getGson()))
                 //使用RxJava
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 //载入Okhttp设置
                 .client(getOkHttpClient())
                 .build();

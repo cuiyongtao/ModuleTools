@@ -2,9 +2,8 @@ package com.victory.basemodule.network.model;
 
 import com.google.gson.Gson;
 import com.victory.basemodule.network.bean.BaseBean;
-import com.victory.basemodule.network.bean.UserInfo;
+import com.victory.basemodule.network.httphelper.NetWorkRequestHelper;
 import com.victory.basemodule.network.httphelper.NetWorkRequestServer;
-import com.victory.basemodule.test.httphelper.NetWorkRequestHelper;
 
 import java.util.Map;
 
@@ -22,7 +21,6 @@ import okhttp3.RequestBody;
 public class BaseModel<T> {
 
     NetWorkRequestServer netRequestService;
-
 
     public BaseModel(Class<T> tClass) {
         netRequestService = (NetWorkRequestServer) NetWorkRequestHelper.getNetWorkRequestHelperInstance().getNetWorkRequestServer(tClass);
@@ -46,7 +44,7 @@ public class BaseModel<T> {
      * @param parme
      * @return
      */
-    public Observable<BaseBean<UserInfo>> postFormRegisterBean(String url, Map<String, Object> parme) {
+    public Observable<BaseBean<T>> postFormRegisterBean(String url, Map<String, Object> parme) {
         return netRequestService.postRequestFormBean(url, parme);
     }
 

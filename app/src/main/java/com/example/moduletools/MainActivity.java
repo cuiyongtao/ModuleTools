@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         Map<String, Object> map = new HashMap<>();
         map.put("username", "victory");
         map.put("password", "123456");
-//        basePresenter.getObjectData(baseModel.postFormRegisterObject("http://www.wanandroid.com/user/login",map));
+        basePresenter.getObjectData(baseModel.postFormRegisterObject("http://www.wanandroid.com/user/login",map));
 
 
     }

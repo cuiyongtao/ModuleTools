@@ -1,8 +1,7 @@
 package com.victory.basemodule.network.httphelper;
 
 
-import com.victory.basemodule.network.bean.BaseBean;
-import com.victory.basemodule.network.bean.UserInfo;
+import com.victory.basemodule.test.bean.BaseBean;
 
 import java.util.Map;
 
@@ -21,7 +20,7 @@ import retrofit2.http.Url;
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule.httphelper
  */
-public interface NetWorkRequestServer {
+public interface NetWorkRequestServer<T> {
 
     /**
      * post请求表单提交，返回object类型
@@ -43,7 +42,7 @@ public interface NetWorkRequestServer {
      */
     @FormUrlEncoded
     @POST
-    Observable<BaseBean<UserInfo>> postRequestFormBean(@Url String url, @FieldMap Map<String, Object> param);
+    Observable<BaseBean<T>> postRequestFormBean(@Url String url, @FieldMap Map<String, Object> param);
 
     /**
      * post请求json提交，返回object类型
