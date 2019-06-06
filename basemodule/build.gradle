@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-apply from :'module_config_set.gradle'
-
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -27,15 +26,22 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation rootProject.ext.androidLibrarys.appcompat
-    implementation rootProject.ext.androidLibrarys.constraintlayout
+    api rootProject.ext.androidLibrarys.appcompat
+    api rootProject.ext.androidLibrarys.constraintlayout
     testImplementation rootProject.ext.androidLibrarys.junit
     androidTestImplementation rootProject.ext.androidLibrarys.runner
     androidTestImplementation rootProject.ext.androidLibrarys.espresso
-    implementation rootProject.ext.androidLibrarys.core
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api rootProject.ext.androidLibrarys.core
+    implementation rootProject.ext.androidLibrarys.kotlin
+    api rootProject.ext.elseLibrary.okhttp
+    api rootProject.ext.elseLibrary.retrofit
+    api rootProject.ext.elseLibrary.retrofit_rxjava
+    api rootProject.ext.elseLibrary.retrofit_gson
+    api rootProject.ext.elseLibrary.rxandroid
+    api rootProject.ext.elseLibrary.rxjava
+    api "io.reactivex:rxandroid:1.2.0"
 }
 repositories {
     mavenCentral()

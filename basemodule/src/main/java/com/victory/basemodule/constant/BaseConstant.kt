@@ -31,11 +31,11 @@ class BaseConstant {
         //打印前缀
         val CommonTAG = "Victory"
         //网络请求前缀
-        val NetWorkTAG = CommonTAG + "NetWork-"
+        open val NetWorkTAG = CommonTAG + "NetWork-"
         //网络请求设置URL
         val NetWorkTAGURL = NetWorkTAG + "URL"
         //网络请求设置参数
-        val NetWorkParam = NetWorkTAG + "Param"
+        public val NetWorkParam = NetWorkTAG + "Param"
         //网络请求设置返回数据
         val NetWorkTAGBody = NetWorkTAG + "Body"
         //网络请求设置错误
