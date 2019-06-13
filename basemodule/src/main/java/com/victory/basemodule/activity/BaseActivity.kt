@@ -7,7 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.victory.basemodule.R
 import com.victory.basemodule.application.BaseApplication
 import com.victory.basemodule.constant.BaseConstant
+import com.victory.basemodule.network.model.BaseModel
+import com.victory.basemodule.network.presenter.BasePresenter
+import com.victory.basemodule.network.view.BaseView
 import com.victory.basemodule.tools.*
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.internal.disposables.ArrayCompositeDisposable
 
 /**
  * @author  Victory
@@ -36,7 +41,11 @@ open class BaseActivity : AppCompatActivity() {
     var myTitleStyle = 0;
     var myTitleStyleSearch = 1;
     var myTitleStyleMain = 2;
-
+    //统一管理rxjava 便于解绑rxjava防止内存泄漏
+    lateinit var compositeDisposable: CompositeDisposable
+    //网络管理
+    lateinit var baseView: BaseView<Any>
+    lateinit var basePresenter: BasePresenter
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +61,17 @@ open class BaseActivity : AppCompatActivity() {
         constantUtils = ConstantUtils.getConstantUtils(mContext)
         spUtils = SPUtils()
         TitleBar.getStyle(myTitleStyleMain)
-        TitleBar.setIconLeftInterFace(object :TitleBar.IconLeftInterface{
+        TitleBar.setIconLeftInterFace(object : TitleBar.IconLeftInterface {
             override fun iconLeftOnclick() {
                 finish()
             }
         })
+
+        compositeDisposable = CompositeDisposable()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 }

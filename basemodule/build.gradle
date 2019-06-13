@@ -41,7 +41,6 @@ dependencies {
     api rootProject.ext.elseLibrary.retrofit_gson
     api rootProject.ext.elseLibrary.rxandroid
     api rootProject.ext.elseLibrary.rxjava
-    api "io.reactivex:rxandroid:1.2.0"
 }
 repositories {
     mavenCentral()

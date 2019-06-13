@@ -5,9 +5,13 @@ import com.victory.basemodule.network.view.BaseView;
 import com.victory.basemodule.tools.LogUtil;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -17,10 +21,11 @@ import io.reactivex.schedulers.Schedulers;
  * @Explain： com.test.networkrequestmodule.presenter
  */
 public class BasePresenter implements BasePresenterInterface {
-    /**
-     * 获取当前实列
-     */
-    private static BasePresenter mBasePresenterInstance;
+
+//    private CompositeSubscripti
+
+    private CompositeDisposable compositeDisposable;
+
     /**
      * 获取BaseView
      */
@@ -29,18 +34,6 @@ public class BasePresenter implements BasePresenterInterface {
      * 日志工具
      */
     private LogUtil mLogUtil;
-
-    /**
-     * 单例报证该类只会被创建一次
-     *
-     * @return
-     */
-    public static BasePresenter getBasePresenterInstance() {
-        if (mBasePresenterInstance == null) {
-            mBasePresenterInstance = new BasePresenter();
-        }
-        return mBasePresenterInstance;
-    }
 
     /**
      * 获取打印日志类
@@ -77,7 +70,7 @@ public class BasePresenter implements BasePresenterInterface {
      */
     @Override
     public void onRequestStop() {
-
+        compositeDisposable.dispose();
     }
 
     /**
@@ -85,78 +78,32 @@ public class BasePresenter implements BasePresenterInterface {
      *
      * @param objectObservable
      */
-    public void getObjectData(Observable<Object> objectObservable) {
-//        objectObservable
-//                .subscribeOn(Schedulers.newThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Observer<Object>() {
-//                    @Override
-//                    public void onNext(Object o) {
-//                        baseView.requestSuccess(o);
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onCompleted() {
-//
-//                    }
-//                });
-
+    public void getObjectData(final CompositeDisposable compositeDisposable, Observable<Object> objectObservable) {
         objectObservable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Object>() {
                     @Override
                     public void onNext(Object o) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
+                        baseView.requestSuccess(o);
                     }
 
                     @Override
                     public void onComplete() {
+                        compositeDisposable.dispose();
+                    }
 
+                    @Override
+                    public void onError(Throwable e) {
+                        getLogUtil().getLogNet("aaas", e.toString());
+                        compositeDisposable.dispose();
                     }
 
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        compositeDisposable.add(d);
                     }
                 });
-
     }
 
-
-//    /**
-//     * 请求返回非正常实体类型，返回实体
-//     */
-//    public <T> void getBeanData(Observable<BaseBean<T>> beanObservable) {
-//        getCompositeSubscription().add(
-//                beanObservable
-//                        .subscribeOn(Schedulers.newThread())
-//                        .observeOn(AndroidSchedulers.mainThread())
-//                        .subscribe(new Observer<BaseBean<T>>() {
-//                            @Override
-//                            public void onNext(BaseBean<T> tBaseBean) {
-//                                baseView.requestSuccess(tBaseBean.getData());
-//                            }
-//
-//                            @Override
-//                            public void onError(Throwable e) {
-//                                getLogUtil().printLogE(getBaseConstant().TAGNETE, e.toString());
-//                            }
-//
-//                            @Override
-//                            public void onCompleted() {
-//                                getLogUtil().printLogD(getBaseConstant().TAGNETD, "onCompleted()");
-//                            }
-//                        }));
-//    }
 
 }

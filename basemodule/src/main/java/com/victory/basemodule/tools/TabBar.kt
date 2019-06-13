@@ -5,11 +5,9 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import com.victory.basemodule.R
 import com.victory.basemodule.adapter.FragmentViewPagerAdapter
 
@@ -23,11 +21,11 @@ open class TabBar : LinearLayout {
     lateinit var fragmentViewPagerAdapter: FragmentViewPagerAdapter
 
     //
-    lateinit var firstFragment: RadioButton
-    lateinit var secondFragment: RadioButton
-    lateinit var thirdFragment: RadioButton
-    lateinit var fourthFragment: RadioButton
-    lateinit var fifthFragment: RadioButton
+    lateinit var firstFragment: AppCompatRadioButton
+    lateinit var secondFragment: AppCompatRadioButton
+    lateinit var thirdFragment: AppCompatRadioButton
+    lateinit var fourthFragment: AppCompatRadioButton
+    lateinit var fifthFragment: AppCompatRadioButton
 
     constructor(context: Context) : super(context, null) {
         init()

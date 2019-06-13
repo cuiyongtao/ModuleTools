@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rvRadioButton"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:layout_alignParentBottom="true"
@@ -17,7 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/firstFragment"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
@@ -29,7 +28,7 @@
             android:text="first"
             android:textSize="@dimen/sp_12" />
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/secondFragment"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
@@ -41,7 +40,7 @@
             android:text="first"
             android:textSize="@dimen/sp_12" />
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/thirdFragment"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
@@ -54,7 +53,7 @@
             android:textSize="@dimen/sp_12" />
 
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/fourthFragment"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
@@ -66,7 +65,7 @@
             android:text="first"
             android:textSize="@dimen/sp_12" />
 
-        <RadioButton
+        <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/fifthFragment"
             android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
