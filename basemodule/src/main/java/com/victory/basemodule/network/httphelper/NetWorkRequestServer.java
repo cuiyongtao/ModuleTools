@@ -1,7 +1,7 @@
 package com.victory.basemodule.network.httphelper;
 
 
-import com.victory.basemodule.test.bean.BaseBean;
+import com.victory.basemodule.network.bean.BaseBean;
 
 import java.util.Map;
 
@@ -13,6 +13,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Url;
+//import rx.Observable;
 
 /**
  * @Author： Victory

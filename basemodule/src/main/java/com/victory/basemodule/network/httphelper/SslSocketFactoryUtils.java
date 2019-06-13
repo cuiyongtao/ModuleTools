@@ -1,4 +1,4 @@
-package com.victory.basemodule.test.httphelper;
+package com.victory.basemodule.network.httphelper;
 
 import android.content.Context;
 import android.util.Log;

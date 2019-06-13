@@ -1,4 +1,4 @@
-package com.victory.basemodule.test.view;
+package com.victory.basemodule.network.view;
 
 /**
  * @Author： Victory

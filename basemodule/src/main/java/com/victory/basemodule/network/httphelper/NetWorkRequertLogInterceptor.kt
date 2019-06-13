@@ -3,13 +3,7 @@ package com.victory.basemodule.network.httphelper
 
 import com.victory.basemodule.constant.BaseConstant
 import com.victory.basemodule.tools.LogUtil
-
-
-import okhttp3.FormBody
-import okhttp3.Interceptor
-import okhttp3.MediaType
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 
 /**
  * @Author： Victory

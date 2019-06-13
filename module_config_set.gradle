@@ -48,7 +48,7 @@ ext {
     elseLibrary = [
             'okhttp'         : "com.squareup.okhttp3:okhttp:$okhttp",
             'retrofit'       : "com.squareup.retrofit2:retrofit:$retrofit",
-            'retrofit_rxjava': "com.squareup.retrofit2:adapter-rxjava:$retrofit",
+            'retrofit_rxjava': "com.squareup.retrofit2:adapter-rxjava2:$retrofit",
             'retrofit_gson'  : "com.squareup.retrofit2:converter-gson:$retrofit",
             'rxjava'         : "io.reactivex.rxjava2:rxjava:$rxjava",
             'rxandroid'      : "io.reactivex.rxjava2:rxandroid:$rxAndroid",

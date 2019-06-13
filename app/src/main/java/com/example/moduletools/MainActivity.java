@@ -2,8 +2,6 @@ package com.example.moduletools;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.victory.basemodule.activity.BaseActivity;
 import com.victory.basemodule.network.httphelper.NetWorkRequestServer;
 import com.victory.basemodule.network.model.BaseModel;
@@ -46,7 +44,7 @@ public class MainActivity extends BaseActivity {
         Map<String, Object> map = new HashMap<>();
         map.put("username", "victory");
         map.put("password", "123456");
-        basePresenter.getObjectData(baseModel.postFormRegisterObject("http://www.wanandroid.com/user/login",map));
+        basePresenter.getObjectData(baseModel.postRequestJsonObject("http://www.wanandroid.com/user/login",map));
 
 
     }

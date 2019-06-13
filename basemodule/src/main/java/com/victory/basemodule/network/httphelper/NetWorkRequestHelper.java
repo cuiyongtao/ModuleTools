@@ -3,13 +3,12 @@ package com.victory.basemodule.network.httphelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.victory.basemodule.constant.BaseConstant;
-import com.victory.basemodule.test.httphelper.NetWorkRequertLogInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -88,7 +87,7 @@ public class NetWorkRequestHelper<T> {
                 //Goso序列化数据
                 .addConverterFactory(GsonConverterFactory.create(getGson()))
                 //使用RxJava
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 //载入Okhttp设置
                 .client(getOkHttpClient())
                 .build();
