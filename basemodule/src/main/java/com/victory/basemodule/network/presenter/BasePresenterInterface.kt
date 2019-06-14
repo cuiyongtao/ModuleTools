@@ -9,13 +9,13 @@ import com.victory.basemodule.network.view.BaseView
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule.presenter
  */
-interface BasePresenterInterface {
+interface BasePresenterInterface<T> {
     /**
      * 请求开始
      *
      * @param view
      */
-    fun onRequestStart(view: BaseView)
+    fun onRequestStart(view: BaseView<T>)
 
     /**
      * 请求中

@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 /**
  * Time 2019/5/23
  * Explain 主页
@@ -65,6 +67,7 @@ public class MainActivity extends BaseActivity {
         Map<String, Object> map = new HashMap<>();
         map.put("username", "victory");
         map.put("password", "123456");
+        compositeDisposable=new CompositeDisposable();
         basePresenter.getObjectData(compositeDisposable, baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
     }
 }

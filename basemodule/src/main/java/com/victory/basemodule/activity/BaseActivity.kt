@@ -17,7 +17,7 @@ import io.reactivex.disposables.CompositeDisposable
  * 用户初始化各种第三方控件等
  */
 
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity<T> : AppCompatActivity() {
     //获取全局上下文
     lateinit var mContext: Context
     //常量类
@@ -40,8 +40,8 @@ open class BaseActivity : AppCompatActivity() {
     //统一管理rxjava 便于解绑rxjava防止内存泄漏
     lateinit var compositeDisposable: CompositeDisposable
     //网络管理
-    lateinit var baseView: BaseView
-    lateinit var basePresenter: BasePresenter
+    lateinit var baseView: BaseView<T>
+    lateinit var basePresenter: BasePresenter<T>
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,8 +62,6 @@ open class BaseActivity : AppCompatActivity() {
                 finish()
             }
         })
-
-        compositeDisposable = CompositeDisposable()
     }
 
     override fun onDestroy() {

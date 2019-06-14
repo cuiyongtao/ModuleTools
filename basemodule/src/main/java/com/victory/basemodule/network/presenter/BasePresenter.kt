@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule.presenter
  */
-class BasePresenter : BasePresenterInterface {
+class BasePresenter<T> : BasePresenterInterface<T> {
 
     //    private CompositeSubscripti
 
@@ -29,7 +29,7 @@ class BasePresenter : BasePresenterInterface {
     /**
      * 获取BaseView
      */
-    private var baseView: BaseView? = null
+    private var baseView: BaseView<T>? = null
     /**
      * 日志工具
      */
@@ -53,7 +53,7 @@ class BasePresenter : BasePresenterInterface {
      *
      * @param view
      */
-    override fun onRequestStart(view: BaseView) {
+    override fun onRequestStart(view: BaseView<T>) {
         baseView = view
     }
 
@@ -71,17 +71,18 @@ class BasePresenter : BasePresenterInterface {
         compositeDisposable!!.dispose()
     }
 
+
     /**
      * 请求返回非正常实体类型，返回对象
      *
      * @param objectObservable
      */
-    fun getObjectData(compositeDisposable: CompositeDisposable, objectObservable: Observable<Any>) {
+    fun getObjectData(compositeDisposable: CompositeDisposable, objectObservable: Observable<T>) {
         objectObservable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .retry()
-                .subscribe(object : Observer<Any> {
-                    override fun onNext(o: Any) {
+                .subscribe(object : Observer<T> {
+                    override fun onNext(o: T) {
                         baseView!!.requestSuccess(o)
                     }
 

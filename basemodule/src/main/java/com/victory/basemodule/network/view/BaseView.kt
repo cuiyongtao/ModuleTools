@@ -6,12 +6,12 @@ package com.victory.basemodule.network.view
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule
  */
-interface BaseView{
+interface BaseView<T>{
     /**
      * 请求成功
      * @param data
      */
-    fun requestSuccess(data: Any)
+    fun requestSuccess(data: T)
 
     /**
      * 请求失败
