@@ -1,5 +1,6 @@
 package com.victory.basemodule.tools
 
+import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
@@ -96,16 +97,16 @@ class ConstantUtils {
     }
 
     /**
-     * 大数据精确运算
+     * 数据精确运算
      */
     private fun getBigDecimal(bytes: Long): String {
         return BigDecimal(bytes).setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString()
     }
 
     /**
-     * 获取当前app版本
+     * 获取当前app版本名称
      */
-    fun getAppVersion(): String {
+    fun getAppVersionName(): String {
         try {
             val appVersion = mContext.packageManager.getPackageInfo(mContext.packageName, 0).versionName
             return appVersion
@@ -113,6 +114,29 @@ class ConstantUtils {
             return e.toString()
         }
     }
+
+    /**
+     * 获取当前app版本
+     */
+    fun getAppVersionCode(): Int {
+        try {
+            val appCode = mContext.packageManager.getPackageInfo(mContext.packageName, 0).versionCode
+            return appCode
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return -1
+    }
+
+    /**
+     *
+     */
+
+    fun getPackgeName(): String {
+        val packname = mContext.packageName
+        return packname;
+    }
+
 
     /**
      * 使用md5加密，例如password
@@ -158,7 +182,7 @@ class ConstantUtils {
             }
         } catch (e: Exception) {
             e.printStackTrace()
-          Toast.makeText(mContext, mContext.resources.getString(R.string.get_file_size_error),Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, mContext.resources.getString(R.string.get_file_size_error), Toast.LENGTH_SHORT).show()
         }
 
         return size
@@ -176,7 +200,7 @@ class ConstantUtils {
                 file.mkdirs()
             }
         } catch (e: Exception) {
-            Toast.makeText(mContext, mContext.resources.getString(R.string.make_file_error),Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, mContext.resources.getString(R.string.make_file_error), Toast.LENGTH_SHORT).show()
         }
 
     }

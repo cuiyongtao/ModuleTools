@@ -31,7 +31,7 @@ class BaseConstant {
         //打印前缀
         val CommonTAG = "Victory"
         //网络请求前缀
-        open val NetWorkTAG = CommonTAG + "NetWork-"
+        val NetWorkTAG = CommonTAG + "NetWork-"
         //网络请求设置URL
         val NetWorkTAGURL = NetWorkTAG + "URL"
         //网络请求设置参数
@@ -40,6 +40,8 @@ class BaseConstant {
         val NetWorkTAGBody = NetWorkTAG + "Body"
         //网络请求设置错误
         val NetWorkTAGError = NetWorkTAG + "Error"
+        //网络请求出错重连次数
+        val netWorkRetry = 10
         /**
          * 列表页每页显示行数
          */
@@ -56,10 +58,12 @@ class BaseConstant {
          * 网络请求时间
          */
         val networkTime = 10
+
+
         /**
          * 缓存名称
          */
-        val spName="VictoryData";
+        val spName = "VictoryData";
     }
 
     /**

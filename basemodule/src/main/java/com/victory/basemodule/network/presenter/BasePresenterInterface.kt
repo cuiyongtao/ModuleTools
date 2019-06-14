@@ -1,7 +1,7 @@
-package com.victory.basemodule.network.presenter;
+package com.victory.basemodule.network.presenter
 
 
-import com.victory.basemodule.network.view.BaseView;
+import com.victory.basemodule.network.view.BaseView
 
 /**
  * @Author： Victory
@@ -9,22 +9,22 @@ import com.victory.basemodule.network.view.BaseView;
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule.presenter
  */
-public interface BasePresenterInterface {
+interface BasePresenterInterface {
     /**
      * 请求开始
      *
      * @param view
      */
-    void onRequestStart(BaseView view);
+    fun onRequestStart(view: BaseView)
 
     /**
      * 请求中
      */
-    void onRequesting();
+    fun onRequesting()
 
     /**
      * 请求停止
      */
-    void onRequestStop();
+    fun onRequestStop()
 
 }

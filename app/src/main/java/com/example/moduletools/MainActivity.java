@@ -41,13 +41,16 @@ public class MainActivity extends BaseActivity {
         });
 
 
+        logUtil.getLogE(constantUtils.getPackgeName());
+
+
     }
 
-    private void init(){
+    private void init() {
         BaseView baseView = new BaseView() {
             @Override
             public void requestSuccess(Object data) {
-                logUtil.getLogD("aaass"+data.toString());
+                logUtil.getLogD("aaass" + data.toString());
             }
 
             @Override
@@ -62,6 +65,6 @@ public class MainActivity extends BaseActivity {
         Map<String, Object> map = new HashMap<>();
         map.put("username", "victory");
         map.put("password", "123456");
-        basePresenter.getObjectData(compositeDisposable,baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
+        basePresenter.getObjectData(compositeDisposable, baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
     }
 }

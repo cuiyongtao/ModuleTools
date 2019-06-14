@@ -1,4 +1,4 @@
-package com.victory.basemodule.network.view;
+package com.victory.basemodule.network.view
 
 /**
  * @Author： Victory
@@ -6,16 +6,16 @@ package com.victory.basemodule.network.view;
  * @QQ： 949021037
  * @Explain： com.test.networkrequestmodule
  */
-public interface BaseView<T> {
+interface BaseView{
     /**
      * 请求成功
      * @param data
      */
-    void requestSuccess(T data);
+    fun requestSuccess(data: Any)
 
     /**
      * 请求失败
      * @param errorMessage
      */
-    void requestError(String errorMessage);
+    fun requestError(errorMessage: String)
 }

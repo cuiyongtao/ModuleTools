@@ -19,8 +19,9 @@ class BaseApplication : Application() {
     /**
      * 初始化
      */
-    private fun init(){
+    private fun init() {
         baseApplication = this
+        mContext = applicationContext
     }
 
     /**
@@ -34,7 +35,8 @@ class BaseApplication : Application() {
      * 设置application单例
      */
     companion object {
-       lateinit var baseApplication: BaseApplication
+        lateinit var mContext: Context
+        lateinit var baseApplication: BaseApplication
             private set
     }
 }
