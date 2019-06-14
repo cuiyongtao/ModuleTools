@@ -13,6 +13,12 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
+import retrofit2.HttpException
+import java.lang.Exception
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import javax.net.ssl.SSLHandshakeException
 
 /**
  * @Author： Victory
@@ -91,7 +97,7 @@ class BasePresenter<T> : BasePresenterInterface<T> {
                     }
 
                     override fun onError(e: Throwable) {
-                        logUtil.getLogNet("aaas", e.toString())
+                        requestErrorEception(e)
                         compositeDisposable.dispose()
                     }
 
@@ -101,5 +107,38 @@ class BasePresenter<T> : BasePresenterInterface<T> {
                 })
     }
 
+    /**
+     * 请求错误统一处理
+     */
+    fun requestErrorEception(e: Throwable) {
+        try {
+            if (e is SocketTimeoutException) {
+                //请求超时
+            } else if (e is ConnectException) {
+                //网络连接超时
+            } else if (e is SSLHandshakeException) {
+                //证书错误
+
+            } else if (e is HttpException) {
+                //请求地址错误
+                val code = e.code();
+                if (code == 504) {
+                    //网络异常 请检查网络状态
+                } else if (code == 404) {
+                    //请求地址不存在
+                } else {
+                    //请求失败
+                }
+            } else if (e is UnknownHostException) {
+                //域名错误
+            } else {
+                //其他错误
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } finally {
+            logUtil.getLogE(e.message!!)
+        }
+    }
 
 }
