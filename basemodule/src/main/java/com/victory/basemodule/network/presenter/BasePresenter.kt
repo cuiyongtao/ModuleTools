@@ -97,7 +97,7 @@ class BasePresenter<T> : BasePresenterInterface<T> {
                     }
 
                     override fun onError(e: Throwable) {
-                        requestErrorEception(e)
+                        requestErrorException(e)
                         compositeDisposable.dispose()
                     }
 
@@ -110,7 +110,7 @@ class BasePresenter<T> : BasePresenterInterface<T> {
     /**
      * 请求错误统一处理
      */
-    fun requestErrorEception(e: Throwable) {
+    fun requestErrorException(e: Throwable) {
         try {
             if (e is SocketTimeoutException) {
                 //请求超时

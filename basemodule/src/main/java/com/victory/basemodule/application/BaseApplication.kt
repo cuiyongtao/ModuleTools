@@ -9,7 +9,7 @@ import android.content.Context
  * BaseApplication : 程序入口
  * app程序启动时调用，用于当前module集成的三方库初始化和全局上下文的获取
  */
-class BaseApplication : Application() {
+open class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
