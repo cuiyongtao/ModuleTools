@@ -29,6 +29,9 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
+    //jitpack 支持
+    api 'com.gitee.cyt_victory:ModuleTools:baa65977d6'
+
     api rootProject.ext.androidLibrarys.appcompat
     api rootProject.ext.androidLibrarys.constraintlayout
     testImplementation rootProject.ext.androidLibrarys.junit
