@@ -19,6 +19,6 @@ public interface DownLoadStatesInterface {
     /**
      * 下载中
      */
-    public void loading(int schedule);
+    public void loading(int progress);
 
 }
