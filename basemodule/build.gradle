@@ -27,7 +27,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-
+    //基本配置
     api rootProject.ext.androidLibrarys.appcompat
     api rootProject.ext.androidLibrarys.constraintlayout
     testImplementation rootProject.ext.androidLibrarys.junit
@@ -35,6 +35,7 @@ dependencies {
     androidTestImplementation rootProject.ext.androidLibrarys.espresso
     api rootProject.ext.androidLibrarys.core
     implementation rootProject.ext.androidLibrarys.kotlin
+    //网络配置
     api rootProject.ext.elseLibrary.okhttp
     api rootProject.ext.elseLibrary.retrofit
     api rootProject.ext.elseLibrary.retrofit_rxjava

@@ -6,6 +6,8 @@ import android.view.View;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.victory.basemodule.activity.BaseActivity;
+import com.victory.basemodule.download.DownLoadStatesInterface;
+import com.victory.basemodule.download.DownLoaderHelper;
 import com.victory.basemodule.network.httphelper.NetWorkRequestServer;
 import com.victory.basemodule.network.model.BaseModel;
 import com.victory.basemodule.network.presenter.BasePresenter;
@@ -49,25 +51,43 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-        BaseView baseView = new BaseView() {
+//        BaseView baseView = new BaseView() {
+//            @Override
+//            public void requestSuccess(Object data) {
+//                logUtil.getLogD("aaass" + data.toString());
+//            }
+//
+//            @Override
+//            public void requestError(@NotNull String errorMessage) {
+//                logUtil.getLogD(errorMessage);
+//            }
+//        };
+//        BaseModel baseModel = new BaseModel(NetWorkRequestServer.class);
+//
+//        BasePresenter basePresenter = new BasePresenter();
+//        basePresenter.onRequestStart(baseView);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("username", "victory");
+//        map.put("password", "123456");
+//        compositeDisposable = new CompositeDisposable();
+//        basePresenter.getObjectData(compositeDisposable, baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
+
+        DownLoaderHelper.getDownLoaderHelper().downloadTest("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
             @Override
-            public void requestSuccess(Object data) {
-                logUtil.getLogD("aaass" + data.toString());
+            public void success(Boolean b) {
+                logUtil.getLogE(b.toString());
             }
 
             @Override
-            public void requestError(@NotNull String errorMessage) {
-                logUtil.getLogD(errorMessage);
+            public void error(String errormsg) {
+                logUtil.getLogE(errormsg);
             }
-        };
-        BaseModel baseModel = new BaseModel(NetWorkRequestServer.class);
 
-        BasePresenter basePresenter = new BasePresenter();
-        basePresenter.onRequestStart(baseView);
-        Map<String, Object> map = new HashMap<>();
-        map.put("username", "victory");
-        map.put("password", "123456");
-        compositeDisposable=new CompositeDisposable();
-        basePresenter.getObjectData(compositeDisposable, baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
+            @Override
+            public void loading(int schedule) {
+                logUtil.getLogE(schedule + "");
+            }
+        });
     }
 }
+
