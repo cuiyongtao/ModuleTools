@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!--透明-->
+    <color name="transparency">#00000000</color>
+
+    <!--快来色-->
+    <color name="login_bg">#1da1f2</color>
+    <color name="login_title">#4577dc</color>
+    <color name="login_register">#487ade</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <!--按钮禁止点击-->
+    <color name="btn_not_chick">#33333333</color>
+
+    <!-- 通用字体色调 -->
+    <color name="txt_font_0">#000000</color>
+
+    <color name="txt_font_3">#333333</color>
+
+    <color name="txt_font_6">#666666</color>
+
+    <color name="txt_font_9">#999999</color>
+
+    <color name="txt_font_b">#BBBBBB</color>
+
+    <color name="txt_font_7c">#7c7c7d</color>
+
+    <color name="txt_font_24">#242425</color>
+
+    <color name="txt_font_price">#ff5b5b</color>
+
+    <color name="txt_font_all_price">#ff4d4d</color>
+
+    <color name="txt_font_blue">#4577dc</color>
+
+    <color name="txt_font_code">#fe5858</color>
+
+    <color name="txt_font_87">#878788</color>
+
+    <color name="txt_font_ff">#ff7a03</color>
+
+    <!--分割线-->
+    <color name="line">#BBBBBB</color>
+
+
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/line" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/firstFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/secondFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/thirdFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/fourthFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/fifthFragment"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/index"
+            android:drawablePadding="@dimen/dp_0"
+            android:gravity="center"
+            android:text="first"
+            android:textSize="@dimen/sp_12" />
+    </RadioGroup>
+
+</LinearLayout>
