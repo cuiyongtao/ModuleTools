@@ -54,12 +54,6 @@ public class MainActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                dialog = new ProgressDialog(MainActivity.this);
-//                dialog.setMessage("test");
-//                dialog.setMax(100);
-//                dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-//                dialog.show();
-                natificationUtil = NatificationUtil.getNatificationUtil(MainActivity.this);
                 init();
             }
         });
@@ -71,44 +65,20 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-//        BaseView baseView = new BaseView() {
-//            @Override
-//            public void requestSuccess(Object data) {
-//                logUtil.getLogD("aaass" + data.toString());
-//            }
-//
-//            @Override
-//            public void requestError(@NotNull String errorMessage) {
-//                logUtil.getLogD(errorMessage);
-//            }
-//        };
-//        BaseModel baseModel = new BaseModel(NetWorkRequestServer.class);
-//
-//        BasePresenter basePresenter = new BasePresenter();
-//        basePresenter.onRequestStart(baseView);
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("username", "victory");
-//        map.put("password", "123456");
-//        compositeDisposable = new CompositeDisposable();
-//        basePresenter.getObjectData(compositeDisposable, baseModel.postFormRegisterObject("http://192.168.2.117:8000/logins", map));
-
-        DownLoaderHelper.getDownLoaderHelper().DownloaderFile("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
+        DownLoaderHelper.getDownLoaderHelper().downloaderFile("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
             @Override
             public void success(Boolean b) {
                 logUtil.getLogE(b.toString());
-//                dialog.dismiss();
             }
 
             @Override
             public void error(String errormsg) {
                 logUtil.getLogE(errormsg);
-//                dialog.dismiss();
             }
 
             @Override
             public void loading(int Progress) {
                 logUtil.getLogE(Progress + "");
-//                dialog.setProgress(Progress);
                 natificationUtil.setNotificationDemoForAndroid(Progress);
             }
         });

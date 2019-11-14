@@ -47,7 +47,7 @@ public class DownLoaderHelper {
      * @param downloadurl
      * @param downLoadStatesInterface
      */
-    public void DownloaderFile(String downloadurl, final DownLoadStatesInterface downLoadStatesInterface) {
+    public void downloaderFile(String downloadurl, final DownLoadStatesInterface downLoadStatesInterface) {
         getOkHttpClient().newCall(getRequest(downloadurl)).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -111,7 +111,7 @@ public class DownLoaderHelper {
      * @param filename
      * @param downLoadStatesInterface
      */
-    public void DownloaderFile(String downloadurl, final String filepath, final String filename, final DownLoadStatesInterface downLoadStatesInterface) {
+    public void downloaderFile(String downloadurl, final String filepath, final String filename, final DownLoadStatesInterface downLoadStatesInterface) {
         getOkHttpClient().newCall(getRequest(downloadurl)).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
