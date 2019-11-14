@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-        DownLoaderHelper.getDownLoaderHelper().downloaderFile("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
+        DownLoaderHelper.Companion.getDownLoaderHelper().downloaderFile("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
             @Override
             public void success(Boolean b) {
                 logUtil.getLogE(b.toString());
@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void loading(int Progress) {
                 logUtil.getLogE(Progress + "");
-                natificationUtil.setNotificationDemoForAndroid(Progress);
+//                natificationUtil.setNotificationDemoForAndroid(Progress);
             }
         });
     }

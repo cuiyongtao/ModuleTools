@@ -42,6 +42,9 @@ open class BaseActivity<T> : AppCompatActivity() {
     //网络管理
     lateinit var baseView: BaseView<T>
     lateinit var basePresenter: BasePresenter<T>
+    //权限工具类
+    lateinit var permissionUtil: PermissionUtil
+
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +59,7 @@ open class BaseActivity<T> : AppCompatActivity() {
         logUtil = LogUtil.getLogUtil(TAG)
         constantUtils = ConstantUtils.getConstantUtils(mContext)
         spUtils = SPUtils()
+        permissionUtil = PermissionUtil.getPermissionUtil(this)
         TitleBar.getStyle(myTitleStyleMain)
         TitleBar.setIconLeftInterFace(object : TitleBar.IconLeftInterface {
             override fun iconLeftOnclick() {
