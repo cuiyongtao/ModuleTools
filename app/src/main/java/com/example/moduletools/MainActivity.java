@@ -18,13 +18,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.NotificationCompat;
 
 import com.victory.basemodule.activity.BaseActivity;
-import com.victory.basemodule.download.DownLoadStatesInterface;
 import com.victory.basemodule.download.DownLoaderHelper;
 import com.victory.basemodule.network.httphelper.NetWorkRequestServer;
 import com.victory.basemodule.network.model.BaseModel;
 import com.victory.basemodule.network.presenter.BasePresenter;
 import com.victory.basemodule.network.view.BaseView;
-import com.victory.basemodule.tools.NatificationUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -43,7 +41,6 @@ public class MainActivity extends BaseActivity {
 
     private AppCompatButton button;
     ProgressDialog dialog;
-    NatificationUtil natificationUtil;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +51,6 @@ public class MainActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                init();
             }
         });
 
@@ -64,25 +60,6 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    private void init() {
-        DownLoaderHelper.Companion.getDownLoaderHelper().downloaderFile("http://bt.kuailai.me/files/release/kuailai.apk", new DownLoadStatesInterface() {
-            @Override
-            public void success(Boolean b) {
-                logUtil.getLogE(b.toString());
-            }
-
-            @Override
-            public void error(String errormsg) {
-                logUtil.getLogE(errormsg);
-            }
-
-            @Override
-            public void loading(int Progress) {
-                logUtil.getLogE(Progress + "");
-//                natificationUtil.setNotificationDemoForAndroid(Progress);
-            }
-        });
-    }
 
 
 }
